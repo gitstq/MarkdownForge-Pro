@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markdownforge-pro"
+version = "1.0.0"
+description = "🚀 MarkdownForge-Pro - Lightweight Terminal Markdown Document Intelligence Engine"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "MarkdownForge Team", email = "team@markdownforge.dev"}
+]
+keywords = [
+    "markdown",
+    "cli",
+    "documentation",
+    "pdf",
+    "html",
+    "converter",
+    "typesetting",
+    "productivity"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+markdownforge = "markdownforge.cli:main"
+mdforge = "markdownforge.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/MarkdownForge-Pro"
+Documentation = "https://github.com/gitstq/MarkdownForge-Pro#readme"
+Repository = "https://github.com/gitstq/MarkdownForge-Pro"
+Issues = "https://github.com/gitstq/MarkdownForge-Pro/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
